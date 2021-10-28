@@ -57,24 +57,24 @@ public class MyApplication {
     
     public void start() {
         
-       //1.declarer la grande Form
+      
        Form f = new Form("Form",BoxLayout.y());
        
-       //2.declarer les texte field
+       
        TextField tfNom = new TextField("","nom");
        TextField tfPrenom = new TextField("","prenom");
        TextField tfPassword = new TextField("","password");
        TextField tfPhone=new TextField("","phone");
        TextField tfEmail = new TextField("","email");
        Picker date= new Picker();
-       //make password invisible
+       
        tfPassword.setConstraint(TextField.PASSWORD);
-       //make phone
+      
        tfPhone.setConstraint(TextField.PHONENUMBER);
-       //make email
+      
        tfEmail.setConstraint(TextField.EMAILADDR);
        
-       //3.add textfield to Form
+      
        f.add(tfNom);
        f.add(tfPrenom);
        f.add(tfPassword);
@@ -83,60 +83,60 @@ public class MyApplication {
        f.add(date);
        
          
-       //4.create a container with Boxlayout.x()
+       //create a container with Boxlayout.x()
        Container cnt = new Container(BoxLayout.xCenter());
-       //add label & onOffSwitch
+       // label & onOffSwitch
        Label l=new Label("Gender ");
        OnOffSwitch onOFF= new OnOffSwitch();
        
-       //5.add label & onOFF to the container
+       //add label & onOFF to the container
        cnt.add(l);
        cnt.add(onOFF);
        
-       //6.add container to Form
+       //add container to Form
        f.add(cnt);
        
-       //7.add checkBox 
+       //add checkBox 
        CheckBox chTennis = new CheckBox("tennis");
        CheckBox chFoot = new CheckBox("foot");
        CheckBox chNatation = new CheckBox("natation");
        CheckBox chLecture = new CheckBox("lecture");
        
-       //8.add to Form
+       //add to Form
        f.add(chTennis);
        f.add(chFoot);
        f.add(chNatation);
        f.add(chLecture);
        
-       //9.add button
+       //add button
        Button btn= new Button("valider");
-       //10.add to form
+       //add to form
        f.add(btn);
        
-       //9.show Form
+       //show Form
        f.show();
        //II-second Form recuperation des data
-       //1. faire listener sur button pour recuperer les data
+       //faire listener sur button pour recuperer les data
        btn.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent evt) {
-               //1.declaration d'une 2é Form
+               
                 Form f2=new Form(BoxLayout.y());
-                //2.declarationdes label pour la recuperation des data
+                
                 Label lNom= new Label("Nom: "+ tfNom.getText());
                 Label lPrenom= new Label("Prenom: " + tfPrenom.getText());
                 Label lPassword= new Label("Password: "+ tfPassword.getText());
                 Label lPhone= new Label("Phone: "+tfPhone.getText());
                 Label lDate= new Label(date.getDate().toString());
-                //3.declarer type gender et s'il est homme ou femme
+                
                 Label lGender = new Label("Gender: ");
-                //4.condusion sur onOff
+                
                 if(onOFF.isValue())
                     lGender.setText("Gender: Femme");
                 else 
                     lGender.setText("Gender: Homme");
                 
-                //5.recuperer les hobbies
+                //recuperer les hobbies
                 Label lHobbies= new Label("hobbies: ");
                 String ch= "Hobbies";
                 if(chFoot.isSelected())
@@ -148,7 +148,7 @@ public class MyApplication {
                 if(chLecture.isSelected())
                     ch+= " Lecture";
                 lHobbies.setText(ch);
-                //6.add all to form2
+                //add all to form2
                 f2.add(lNom);
                 f2.add(lPrenom);
                 f2.add(lPassword);
@@ -156,6 +156,7 @@ public class MyApplication {
                 f2.add(lDate);
                 f2.add(lGender);
                 f2.add(lHobbies);
+               
                 f2.show();
                 
                 
