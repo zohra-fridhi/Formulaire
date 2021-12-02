@@ -1,4 +1,4 @@
 # Formulaire
--codenameOne 
--Formulaire d'inscription
+- codenameOne 
+- Formulaire d'inscription
 
